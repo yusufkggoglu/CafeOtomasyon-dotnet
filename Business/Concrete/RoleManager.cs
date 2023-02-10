@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Business.Abstract;
+using Business.Utilities;
+using Business.ValidationRules.FluentValidation;
 using DataAccess.Abstract;
 using Entities.Concrete;
 
@@ -19,6 +21,7 @@ namespace Business.Concrete
         }
         public void Add(Role role)
         {
+            ValidationTool.Validate(new RoleValidator(), role);
             _roleDal.Add(role);
         }
 
@@ -39,6 +42,7 @@ namespace Business.Concrete
 
         public void Update(Role role)
         {
+            ValidationTool.Validate(new RoleValidator(), role);
             _roleDal.Update(role);
         }
     }

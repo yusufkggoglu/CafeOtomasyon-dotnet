@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 using Business.Abstract;
 using Entities.Concrete;
 using DataAccess.Abstract;
-
+using Business.ValidationRules.FluentValidation;
+using FluentValidation;
+using Business.Utilities;
 
 namespace Business.Concrete
 {
@@ -26,11 +28,13 @@ namespace Business.Concrete
 
         public void Add(Product product)
         {
+            ValidationTool.Validate(new ProductValidator(), product);
             _productDal.Add(product);
         }
 
         public void Update(Product product)
         {
+            ValidationTool.Validate(new ProductValidator(), product);
             _productDal.Update(product);
         }
 

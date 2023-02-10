@@ -1,4 +1,6 @@
 ﻿using Business.Abstract;
+using Business.Utilities;
+using Business.ValidationRules.FluentValidation;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
@@ -19,6 +21,7 @@ namespace Business.Concrete
         }
         public void Add(Order order)
         {
+            ValidationTool.Validate(new OrderValidator(), order);
             _orderDal.Add(order);
         }
 
@@ -44,6 +47,7 @@ namespace Business.Concrete
 
         public void Update(Order order)
         {
+            ValidationTool.Validate(new OrderValidator(), order);
             _orderDal.Update(order);
         }
     }

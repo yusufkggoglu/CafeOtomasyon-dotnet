@@ -51,27 +51,41 @@ namespace Forms
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
-            _productService.Add(new Product
+            try
             {
-                CategoryID = Convert.ToInt32(cbxCategory.SelectedValue),
-                Name = tbxName.Text,
-                Price = Convert.ToDecimal(tbxPrice.Text)
-            });
-            LoadProducts();
-            MessageBox.Show("Ürün Eklendi!");
+                _productService.Add(new Product
+                {
+                    CategoryID = Convert.ToInt32(cbxCategory.SelectedValue),
+                    Name = tbxName.Text,
+                    Price = Convert.ToDecimal(tbxPrice.Text)
+                });
+                LoadProducts();
+                MessageBox.Show("Ürün Eklendi!");
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
         }
 
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
-            _productService.Update(new Product
+            try
             {
-                ProductID = Convert.ToInt32(dqwUrunler.CurrentRow.Cells[0].Value),
-                Name = tbxUpdateName.Text,
-                CategoryID = Convert.ToInt32(cbxUpdateCategory.SelectedValue),
-                Price = Convert.ToDecimal(tbxUpdatePrice.Text)
-            });
-            LoadProducts();
-            MessageBox.Show("Ürün Güncellendi!");
+                _productService.Update(new Product
+                {
+                    ProductID = Convert.ToInt32(dqwUrunler.CurrentRow.Cells[0].Value),
+                    Name = tbxUpdateName.Text,
+                    CategoryID = Convert.ToInt32(cbxUpdateCategory.SelectedValue),
+                    Price = Convert.ToDecimal(tbxUpdatePrice.Text)
+                });
+                LoadProducts();
+                MessageBox.Show("Ürün Güncellendi!");
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
         }
 
         private void dqwUrunler_CellClick_1(object sender, DataGridViewCellEventArgs e)

@@ -13,6 +13,5 @@ namespace Entities.Concrete
         public string Soyad { get; set; }
         public int RoleID { get; set; }
         public string Password { get; set; }
-
     }
 }

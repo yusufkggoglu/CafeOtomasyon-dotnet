@@ -1,4 +1,6 @@
 ﻿using Business.Abstract;
+using Business.Utilities;
+using Business.ValidationRules.FluentValidation;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
@@ -24,13 +26,14 @@ namespace Business.Concrete
 
         public void Add(Payment payment)
         {
+            ValidationTool.Validate(new PaymentValidator(), payment);
             _paymentDal.Add(payment);
         }
 
         public void Update(Payment payment)
         {
+            ValidationTool.Validate(new PaymentValidator(), payment);
             _paymentDal.Update(payment);
-
         }
 
         public void Delete(Payment payment)
