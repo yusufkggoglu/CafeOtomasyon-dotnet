@@ -23,14 +23,22 @@ namespace Forms
         }
         ITableService _tableService;
         public int user_id;
+
         private void btnEkle_Click(object sender, EventArgs e)
         {
-            _tableService.Add(new Table
+            try
             {
-                TableName = tbxName.Text,
-            });
-            LoadTables();
-            MessageBox.Show("Masa Eklendi !");
+                _tableService.Add(new Table
+                {
+                    TableName = tbxName.Text,
+                });
+                LoadTables();
+                MessageBox.Show("Masa Eklendi !");
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
         }
 
         private void LoadTables()
@@ -50,12 +58,21 @@ namespace Forms
 
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
-            _tableService.Update(new Table
-            {   TableID=Convert.ToInt32(dqwMasalar.CurrentRow.Cells[0].Value),
-                TableName = tbxUpdateName.Text,
-            });
-            LoadTables();
-            MessageBox.Show("Masa Güncellendi !");
+            try
+            {
+                _tableService.Update(new Table
+                {
+                    TableID = Convert.ToInt32(dqwMasalar.CurrentRow.Cells[0].Value),
+                    TableName = tbxUpdateName.Text,
+                });
+                LoadTables();
+                MessageBox.Show("Masa Güncellendi !");
+
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
         }
 
         private void TableSettings_Load(object sender, EventArgs e)

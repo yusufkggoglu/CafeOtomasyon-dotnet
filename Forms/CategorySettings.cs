@@ -40,34 +40,56 @@ namespace Forms
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
-            _categoryService.Add(new Category
+            try
             {
-                Name = tbxName.Text,
-                
-            });
-            LoadCategories();
-            MessageBox.Show("Kategori Eklendi!");
+                _categoryService.Add(new Category
+                {
+                    Name = tbxName.Text,
+
+                });
+                LoadCategories();
+                MessageBox.Show("Kategori Eklendi!");
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
         }
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            _categoryService.Delete(new Category
+            try
             {
-                CategoryID = Convert.ToInt32(dqwKategoriler.CurrentRow.Cells[0].Value)
-            });
-            LoadCategories();
-            MessageBox.Show("Kategori Silindi !");
+                _categoryService.Delete(new Category
+                {
+                    CategoryID = Convert.ToInt32(dqwKategoriler.CurrentRow.Cells[0].Value)
+                });
+                LoadCategories();
+                MessageBox.Show("Kategori Silindi !");
+            }
+            catch (Exception )
+            {
+                MessageBox.Show("Silmek istediğiniz kategorinin bir ürün içermediğine dikkat edin ve tekrar deneyin.");
+            }
+           
         }
 
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
-            _categoryService.Update(new Category
+            try
             {
-                CategoryID = Convert.ToInt32(dqwKategoriler.CurrentRow.Cells[0].Value),
-                Name = tbxUpdateName.Text,
-            });
-            LoadCategories();
-            MessageBox.Show("Kategori Güncellendi !");
+                _categoryService.Update(new Category
+                {
+                    CategoryID = Convert.ToInt32(dqwKategoriler.CurrentRow.Cells[0].Value),
+                    Name = tbxUpdateName.Text,
+                });
+                LoadCategories();
+                MessageBox.Show("Kategori Güncellendi !");
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
         }
     }
 }

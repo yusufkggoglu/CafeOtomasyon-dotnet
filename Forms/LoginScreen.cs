@@ -78,17 +78,25 @@ namespace Forms
         
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            var list = _userService.GetAll();
-            foreach(var temp in list)
+            try
             {
-                if(temp.Password == tbxPassword.Text)
+                var list = _userService.GetAll();
+                foreach (var temp in list)
                 {
-                    MainLayout frm1 = new MainLayout() {
-                        user_id = temp.UserID,
-                    };
-                    frm1.Show();
-                    this.Hide();
+                    if (temp.Password == tbxPassword.Text)
+                    {
+                        MainLayout frm1 = new MainLayout()
+                        {
+                            user_id = temp.UserID,
+                        };
+                        frm1.Show();
+                        this.Hide();
+                    }
                 }
+            }
+            catch
+            {
+                MessageBox.Show("Bir sorun oluştu , Tekrar deneyiniz !");
             }
         }
     }

@@ -25,10 +25,10 @@ namespace Forms
         }
         IPaymentService _paymentService;
         public int user_id;
+
         private void LoadPayments()
         {
             dqwPayments.DataSource = _paymentService.GetAll();
-
         }
 
         private string GetByPaymentMethod(string method)
@@ -100,24 +100,28 @@ namespace Forms
                 xlWorkSheet.PasteSpecial(CR, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
                 durum = true;
             }
-            catch (Exception ex)
+            catch (Exception exception)
             {
-                MessageBox.Show("DataGrid Verileri Aktarılamadı : " + ex.Message);
+                MessageBox.Show("DataGrid Verileri Aktarılamadı : " + exception.Message);
             }
             return durum;
         }
 
         private void btnTemizle_Click(object sender, EventArgs e)
         {
-            var list = _paymentService.GetAll();
-            foreach (var temp in list)
+            DialogResult secenek = MessageBox.Show("Ödeme geçmişi silinecek, Emin misiniz ?", "Dikkat", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (secenek == DialogResult.Yes)
             {
-                _paymentService.Delete(temp);
+                var list = _paymentService.GetAll();
+                foreach (var temp in list)
+                {
+                    _paymentService.Delete(temp);
+                }
+                LoadPayments();
+                tbxToplam.Text = GetSumPrice();
+                tbxKart.Text = GetByPaymentMethod("Kredi Kartı");
+                tbxNakit.Text = GetByPaymentMethod("Nakit");
             }
-            LoadPayments();
-            tbxToplam.Text = GetSumPrice();
-            tbxKart.Text = GetByPaymentMethod("Kredi Kartı");
-            tbxNakit.Text = GetByPaymentMethod("Nakit");
         }
     }
 }

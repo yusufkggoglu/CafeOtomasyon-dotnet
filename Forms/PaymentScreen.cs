@@ -91,59 +91,96 @@ namespace Forms
 
         public void ChangeStatus1(Table table)
         {
-            _tableService.Update(new Table
+            try
             {
-                TableID = table.TableID,
-                Status = 1,
-                TableName = table.TableName,
-            });
+                _tableService.Update(new Table
+                {
+                    TableID = table.TableID,
+                    Status = 1,
+                    TableName = table.TableName,
+                });
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
         }
         public void ChangeStatus0(Table table)
         {
-            _tableService.Update(new Table
+            try
             {
-                TableID = table.TableID,
-                Status = 0,
-                TableName = table.TableName,
-            });
+                _tableService.Update(new Table
+                {
+                    TableID = table.TableID,
+                    Status = 0,
+                    TableName = table.TableName,
+                });
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
         }
+
         private void OffTable(int id)
         {
-            var list = _orderService.GetAll(id);
-            foreach (var temp in list)
+            try
             {
-                _orderService.Delete(temp);
+                var list = _orderService.GetAll(id);
+                foreach (var temp in list)
+                {
+                    _orderService.Delete(temp);
+                }
+                MessageBox.Show("Hesap Ödendi!");
+                GetTables();
             }
-            MessageBox.Show("Hesap Ödendi!");
-            GetTables();
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
         }
         
         private void btnNakit_Click(object sender, EventArgs e)
         {
-            _paymentService.Add(new Payment
+            try
             {
-                Price = Convert.ToDecimal(tbxPrice.Text),
-                PaymentTime = DateTime.Now,
-                PaymentMethod = "Nakit",
-            });
-            OffTable(masa_id);
-            Table table = _tableService.Get(masa_id);
-            ChangeStatus0(table);
-            ReturnTables();
+                _paymentService.Add(new Payment
+                {
+                    Price = Convert.ToDecimal(tbxPrice.Text),
+                    PaymentTime = DateTime.Now,
+                    PaymentMethod = "Nakit",
+                });
+                OffTable(masa_id);
+                Table table = _tableService.Get(masa_id);
+                ChangeStatus0(table);
+                ReturnTables();
+
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
         }
 
         private void btnKart_Click(object sender, EventArgs e)
         {
-            _paymentService.Add(new Payment
+            try
             {
-                Price = Convert.ToDecimal(tbxPrice.Text),
-                PaymentTime = DateTime.Now,
-                PaymentMethod = "Kredi Kartı",
-            });
-            OffTable(masa_id);
-            Table table = _tableService.Get(masa_id);
-            ChangeStatus0(table);
-            ReturnTables();
+                _paymentService.Add(new Payment
+                {
+                    Price = Convert.ToDecimal(tbxPrice.Text),
+                    PaymentTime = DateTime.Now,
+                    PaymentMethod = "Kredi Kartı",
+                });
+                OffTable(masa_id);
+                Table table = _tableService.Get(masa_id);
+                ChangeStatus0(table);
+                ReturnTables();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
         }
 
         public void ReturnTables()

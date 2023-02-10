@@ -25,6 +25,7 @@ namespace Forms
         IUserService _userService;
         IRoleService _roleService;
         public int user_id;
+
         private void LoadRoles()
         {
             dqwRoller.DataSource = _roleService.GetAll();
@@ -52,13 +53,21 @@ namespace Forms
         }
         private void btnRolEkle_Click(object sender, EventArgs e)
         {
-            _roleService.Add(new Role
+            try
             {
-                RoleName = tbxRoleName.Text,
-            });
-            LoadRoles();
-            LoadComboBoxRoles();
-            MessageBox.Show("Rol Eklendi!");
+                _roleService.Add(new Role
+                {
+                    RoleName = tbxRoleName.Text,
+                });
+                LoadRoles();
+                LoadComboBoxRoles();
+                MessageBox.Show("Rol Eklendi!");
+
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
         }
         private void btnRolSil_Click(object sender, EventArgs e)
         {
@@ -86,27 +95,43 @@ namespace Forms
 
         private void btnRolGuncelle_Click(object sender, EventArgs e)
         {
-            _roleService.Update(new Role
+            try
             {
-                RoleID = Convert.ToInt32(dqwRoller.CurrentRow.Cells[0].Value),
-                RoleName = tbxUpdateRoleName.Text
-            });
-            LoadRoles();
-            LoadComboBoxRoles();
-            MessageBox.Show("Rol Güncellendi !");
+                _roleService.Update(new Role
+                {
+                    RoleID = Convert.ToInt32(dqwRoller.CurrentRow.Cells[0].Value),
+                    RoleName = tbxUpdateRoleName.Text
+                });
+                LoadRoles();
+                LoadComboBoxRoles();
+                MessageBox.Show("Rol Güncellendi !");
+
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
         }
 
         private void btnKullaniciEkle_Click(object sender, EventArgs e)
         {
-            _userService.Add(new User
+            try
             {
-                Ad = tbxAd.Text,
-                Soyad = tbxSoyad.Text,
-                Password = tbxSifre.Text,
-                RoleID = Convert.ToInt32(cbxRole.SelectedValue),
-            });
-            LoadUsers();
-            MessageBox.Show("Kullanıcı Eklendi !");
+                _userService.Add(new User
+                {
+                    Ad = tbxAd.Text,
+                    Soyad = tbxSoyad.Text,
+                    Password = tbxSifre.Text,
+                    RoleID = Convert.ToInt32(cbxRole.SelectedValue),
+                });
+                LoadUsers();
+                MessageBox.Show("Kullanıcı Eklendi !");
+
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
         }
 
         private void btnKullaniciSil_Click(object sender, EventArgs e)
@@ -121,16 +146,23 @@ namespace Forms
 
         private void btnKullaniciGuncelle_Click(object sender, EventArgs e)
         {
-            _userService.Update(new User
+            try
             {
-                UserID = Convert.ToInt32(dqwKullanicilar.CurrentRow.Cells[0].Value),
-                Ad = tbxUpdateAd.Text,
-                Soyad = tbxUpdateSoyad.Text,
-                Password = tbxUpdateSifre.Text,
-                RoleID = Convert.ToInt32(cbxUpdateRole.SelectedValue),
-            });
-            LoadUsers();
-            MessageBox.Show("Kullanıcı Güncellendi !");
+                _userService.Update(new User
+                {
+                    UserID = Convert.ToInt32(dqwKullanicilar.CurrentRow.Cells[0].Value),
+                    Ad = tbxUpdateAd.Text,
+                    Soyad = tbxUpdateSoyad.Text,
+                    Password = tbxUpdateSifre.Text,
+                    RoleID = Convert.ToInt32(cbxUpdateRole.SelectedValue),
+                });
+                LoadUsers();
+                MessageBox.Show("Kullanıcı Güncellendi !");
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
         }
     }
 }

@@ -304,7 +304,7 @@
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.dqwGiderler);
             this.Name = "OutGoingsScreen";
-            this.Text = "OutGoingsScreen";
+            this.Text = "Gider Ekranı";
             this.Load += new System.EventHandler(this.OutGoingsScreen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dqwGiderler)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();

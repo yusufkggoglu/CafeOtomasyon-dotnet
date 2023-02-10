@@ -43,15 +43,22 @@ namespace Forms
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
-            _outGoingService.Add(new OutGoing
+            try
             {
-                Name = tbxName.Text,
-                Price = Convert.ToDecimal(tbxPrice.Text),
-                Amount=Convert.ToInt32(tbxAmount.Text),
-            });
-            LoadOutGoings();
-            GetSumOfOutGoings();
-            MessageBox.Show("Gider Eklendi!");
+                _outGoingService.Add(new OutGoing
+                {
+                    Name = tbxName.Text,
+                    Price = Convert.ToDecimal(tbxPrice.Text),
+                    Amount = Convert.ToInt32(tbxAmount.Text),
+                });
+                LoadOutGoings();
+                GetSumOfOutGoings();
+                MessageBox.Show("Gider Eklendi!");
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
         }
 
         private void btnSil_Click(object sender, EventArgs e)
@@ -67,16 +74,23 @@ namespace Forms
 
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
-            _outGoingService.Update(new OutGoing
+            try
             {
-                ID = Convert.ToInt32(dqwGiderler.CurrentRow.Cells[0].Value),
-                Name = tbxUpdateName.Text,
-                Price = Convert.ToDecimal(tbxUpdatePrice.Text),
-                Amount = Convert.ToInt32(tbxUpdateAmount.Text),
-            });
-            LoadOutGoings();
-            GetSumOfOutGoings();
-            MessageBox.Show("Gider Güncellendi!");
+                _outGoingService.Update(new OutGoing
+                {
+                    ID = Convert.ToInt32(dqwGiderler.CurrentRow.Cells[0].Value),
+                    Name = tbxUpdateName.Text,
+                    Price = Convert.ToDecimal(tbxUpdatePrice.Text),
+                    Amount = Convert.ToInt32(tbxUpdateAmount.Text),
+                });
+                LoadOutGoings();
+                GetSumOfOutGoings();
+                MessageBox.Show("Gider Güncellendi!");
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
         }
 
         private void GetSumOfOutGoings()
