@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
+using Business.DependencyResolvers.Ninject;
 using DataAccess.Concrete.EntityFramework;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ namespace Forms
         public KitchenScreen()
         {
             InitializeComponent();
-            _orderService = new OrderManager(new EfOrderDal());
+            _orderService =InstanceFactory.GetInstance<IOrderService>();
         }
         IOrderService _orderService;
         private void LoadOrders()

@@ -11,6 +11,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entities.Concrete;
+using Business.DependencyResolvers.Ninject;
+
 namespace Forms
 {
     public partial class PaymentScreen : DevExpress.XtraEditors.XtraForm
@@ -18,9 +20,9 @@ namespace Forms
         public PaymentScreen()
         {
             InitializeComponent();
-            _tableService = new TableManager(new EfTableDal());
-            _orderService = new OrderManager(new EfOrderDal());
-            _paymentService = new PaymentManager(new EfPaymentDal());
+            _tableService = InstanceFactory.GetInstance<ITableService>();
+            _orderService = InstanceFactory.GetInstance<IOrderService>();
+            _paymentService = InstanceFactory.GetInstance<IPaymentService>();
         }
         ITableService _tableService;
         IOrderService _orderService;

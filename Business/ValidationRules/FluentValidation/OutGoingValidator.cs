@@ -17,6 +17,7 @@ namespace Business.ValidationRules.FluentValidation
             RuleFor(p => p.Price).NotEmpty().WithMessage("Fiyat boş olamaz !");
 
             RuleFor(p => p.Price).GreaterThan(0).WithMessage("Fiyat 0'dan büyük olmalı !");
+            RuleFor(p => p.Amount).GreaterThan(0).WithMessage("Ürün miktarı 0'dan büyük olmalı !");
         }
     }
 }

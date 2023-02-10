@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entities.Concrete;
+using Business.DependencyResolvers.Ninject;
 
 namespace Forms
 {
@@ -19,7 +20,7 @@ namespace Forms
         public OutGoingsScreen()
         {
             InitializeComponent();
-            _outGoingService = new OutGoingManager(new EfOutGoingDal());
+            _outGoingService = InstanceFactory.GetInstance<IOutGoingService>();
         }
         IOutGoingService _outGoingService;
 

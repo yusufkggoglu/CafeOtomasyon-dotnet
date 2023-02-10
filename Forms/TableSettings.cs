@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entities.Concrete;
+using Business.DependencyResolvers.Ninject;
 
 namespace Forms
 {
@@ -19,7 +20,7 @@ namespace Forms
         public TableSettings()
         {
             InitializeComponent();
-            _tableService = new TableManager(new EfTableDal());
+            _tableService = InstanceFactory.GetInstance<ITableService>();
         }
         ITableService _tableService;
         public int user_id;

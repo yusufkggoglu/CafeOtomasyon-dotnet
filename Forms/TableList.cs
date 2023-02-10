@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
+using Business.DependencyResolvers.Ninject;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
@@ -22,7 +23,7 @@ namespace Forms
         public TableList()
         {
             InitializeComponent();
-            _tableService = new TableManager(new EfTableDal());
+            _tableService = InstanceFactory.GetInstance<ITableService>();
         }
         ITableService _tableService;
         public int user_id;

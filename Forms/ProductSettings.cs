@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
+using Business.DependencyResolvers.Ninject;
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
 using System;
@@ -19,9 +20,8 @@ namespace Forms
         public ProductSettings()
         {
             InitializeComponent();
-            _productService = new ProductManager(new EfProductDal());
-            _categoryService = new CategoryManager(new EfCategoryDal());
-
+            _productService = InstanceFactory.GetInstance<IProductService>();
+            _categoryService = InstanceFactory.GetInstance<ICategoryService>();
         }
         IProductService _productService;
         ICategoryService _categoryService;

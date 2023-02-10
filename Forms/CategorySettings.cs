@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
+using Business.DependencyResolvers.Ninject;
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
 using System;
@@ -19,8 +20,7 @@ namespace Forms
         public CategorySettings()
         {
             InitializeComponent();
-            _categoryService = new CategoryManager(new EfCategoryDal());
-
+            _categoryService = InstanceFactory.GetInstance<ICategoryService>();
         }
         ICategoryService _categoryService;
         public int user_id;

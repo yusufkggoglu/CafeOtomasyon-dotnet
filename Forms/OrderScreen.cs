@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Business.Abstract;
 using Business.Concrete;
+using Business.DependencyResolvers.Ninject;
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
 
@@ -19,9 +20,9 @@ namespace Forms
         public OrderScreen()
         {
             InitializeComponent();
-            _productService = new ProductManager(new EfProductDal());
-            _orderService = new OrderManager(new EfOrderDal());
-            _tableService = new TableManager(new EfTableDal());
+            _productService = InstanceFactory.GetInstance<IProductService>();
+            _orderService = InstanceFactory.GetInstance<IOrderService>();
+            _tableService = InstanceFactory.GetInstance<ITableService>();
         }
 
         public int id;
@@ -68,7 +69,7 @@ namespace Forms
                     Price = Convert.ToDecimal(btn.AccessibleDescription),
                     TableID = id,
                     Amount = 1,
-                    UserID = 1,
+                    UserID = user_id,
                     OrderTime = DateTime.Now,
                     Note = "",
                 });

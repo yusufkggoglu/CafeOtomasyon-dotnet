@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
+using Business.DependencyResolvers.Ninject;
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
 using System;
@@ -19,7 +20,7 @@ namespace Forms
         public MainLayout()
         {
             InitializeComponent();
-            _userService = new UserManager(new EfUserDal());
+            _userService = InstanceFactory.GetInstance<IUserService>();
         }
         IUserService _userService;
         public int user_id;
@@ -75,7 +76,6 @@ namespace Forms
                 };
             frm4.MdiParent = this;
             frm4.Show();
-
         }
 
         private void barBtnSiparis_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

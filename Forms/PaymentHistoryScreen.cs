@@ -11,8 +11,7 @@ using System.Windows.Forms;
 using Business.Concrete;
 using DataAccess.Concrete.EntityFramework;
 using Excel = Microsoft.Office.Interop.Excel;
-
-
+using Business.DependencyResolvers.Ninject;
 
 namespace Forms
 {
@@ -21,7 +20,7 @@ namespace Forms
         public PaymentHistoryScreen()
         {
             InitializeComponent();
-            _paymentService = new PaymentManager(new EfPaymentDal());
+            _paymentService = InstanceFactory.GetInstance<IPaymentService>();
         }
         IPaymentService _paymentService;
         public int user_id;

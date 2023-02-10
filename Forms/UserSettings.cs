@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entities.Concrete;
+using Business.DependencyResolvers.Ninject;
 
 namespace Forms
 {
@@ -19,8 +20,8 @@ namespace Forms
         public UserSettings()
         {
             InitializeComponent();
-            _userService = new UserManager(new EfUserDal());
-            _roleService = new RoleManager(new EfRoleDal());
+            _userService = InstanceFactory.GetInstance<IUserService>();
+            _roleService = InstanceFactory.GetInstance<IRoleService>();
         }
         IUserService _userService;
         IRoleService _roleService;
