@@ -59,8 +59,11 @@
             this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem14 = new DevExpress.XtraBars.BarButtonItem();
+            this.barEditItem1 = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemRatingControl1 = new DevExpress.XtraEditors.Repository.RepositoryItemRatingControl();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRatingControl1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonPage1
@@ -209,15 +212,18 @@
             this.barButtonItem3,
             this.barButtonItem5,
             this.barBtnBack,
-            this.barBtnRefresh});
+            this.barBtnRefresh,
+            this.barEditItem1});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 21;
+            this.ribbonControl1.MaxItemId = 22;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.OptionsMenuMinWidth = 289;
             this.ribbonControl1.PageHeaderItemLinks.Add(this.barBtnBack);
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
             this.ribbonPage2});
+            this.ribbonControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemRatingControl1});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2007;
             this.ribbonControl1.Size = new System.Drawing.Size(1700, 191);
             // 
@@ -364,6 +370,18 @@
             this.barButtonItem14.ItemAppearance.Normal.Options.UseFont = true;
             this.barButtonItem14.Name = "barButtonItem14";
             // 
+            // barEditItem1
+            // 
+            this.barEditItem1.Caption = "barEditItem1";
+            this.barEditItem1.Edit = this.repositoryItemRatingControl1;
+            this.barEditItem1.Id = 21;
+            this.barEditItem1.Name = "barEditItem1";
+            // 
+            // repositoryItemRatingControl1
+            // 
+            this.repositoryItemRatingControl1.AutoHeight = false;
+            this.repositoryItemRatingControl1.Name = "repositoryItemRatingControl1";
+            // 
             // MainLayout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -371,12 +389,15 @@
             this.ClientSize = new System.Drawing.Size(1700, 989);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
+            this.MinimumSize = new System.Drawing.Size(1712, 1018);
             this.Name = "MainLayout";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cafe Otomasyon Sistemi";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainLayout_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRatingControl1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -413,5 +434,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarButtonItem barBtnBack;
         private DevExpress.XtraBars.BarButtonItem barBtnRefresh;
+        private DevExpress.XtraBars.BarEditItem barEditItem1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemRatingControl repositoryItemRatingControl1;
     }
 }

@@ -52,6 +52,8 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.tbxToplam = new System.Windows.Forms.TextBox();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.btnTemizle = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dqwGiderler)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
@@ -101,6 +103,8 @@
             // groupControl1
             // 
             this.groupControl1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupControl1.Controls.Add(this.btnTemizle);
+            this.groupControl1.Controls.Add(this.btnSave);
             this.groupControl1.Controls.Add(this.tbxAmount);
             this.groupControl1.Controls.Add(this.btnSil);
             this.groupControl1.Controls.Add(this.btnEkle);
@@ -120,15 +124,15 @@
             // 
             this.tbxAmount.Location = new System.Drawing.Point(103, 98);
             this.tbxAmount.Name = "tbxAmount";
-            this.tbxAmount.Size = new System.Drawing.Size(143, 23);
+            this.tbxAmount.Size = new System.Drawing.Size(176, 23);
             this.tbxAmount.TabIndex = 16;
             // 
             // btnSil
             // 
             this.btnSil.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSil.ImageOptions.Image")));
-            this.btnSil.Location = new System.Drawing.Point(103, 298);
+            this.btnSil.Location = new System.Drawing.Point(103, 237);
             this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(143, 44);
+            this.btnSil.Size = new System.Drawing.Size(176, 44);
             this.btnSil.TabIndex = 15;
             this.btnSil.Text = "Sil";
             this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
@@ -136,9 +140,9 @@
             // btnEkle
             // 
             this.btnEkle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEkle.ImageOptions.Image")));
-            this.btnEkle.Location = new System.Drawing.Point(103, 229);
+            this.btnEkle.Location = new System.Drawing.Point(103, 183);
             this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Size = new System.Drawing.Size(143, 48);
+            this.btnEkle.Size = new System.Drawing.Size(176, 48);
             this.btnEkle.TabIndex = 14;
             this.btnEkle.Text = "Ekle";
             this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
@@ -147,14 +151,14 @@
             // 
             this.tbxPrice.Location = new System.Drawing.Point(103, 145);
             this.tbxPrice.Name = "tbxPrice";
-            this.tbxPrice.Size = new System.Drawing.Size(143, 23);
+            this.tbxPrice.Size = new System.Drawing.Size(176, 23);
             this.tbxPrice.TabIndex = 5;
             // 
             // tbxName
             // 
             this.tbxName.Location = new System.Drawing.Point(103, 47);
             this.tbxName.Name = "tbxName";
-            this.tbxName.Size = new System.Drawing.Size(143, 23);
+            this.tbxName.Size = new System.Drawing.Size(176, 23);
             this.tbxName.TabIndex = 3;
             // 
             // lblPrice
@@ -294,6 +298,26 @@
             this.labelControl3.TabIndex = 5;
             this.labelControl3.Text = "Toplam Gider";
             // 
+            // btnTemizle
+            // 
+            this.btnTemizle.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnTemizle.ImageOptions.SvgImage")));
+            this.btnTemizle.Location = new System.Drawing.Point(103, 340);
+            this.btnTemizle.Name = "btnTemizle";
+            this.btnTemizle.Size = new System.Drawing.Size(176, 47);
+            this.btnTemizle.TabIndex = 18;
+            this.btnTemizle.Text = "Temizle";
+            this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSave.ImageOptions.SvgImage")));
+            this.btnSave.Location = new System.Drawing.Point(103, 287);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(176, 47);
+            this.btnSave.TabIndex = 17;
+            this.btnSave.Text = "Excell\'e Aktar";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // OutGoingsScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -347,5 +371,7 @@
         private DevExpress.XtraEditors.LabelControl lblUpdateAmount;
         private System.Windows.Forms.TextBox tbxToplam;
         private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.SimpleButton btnTemizle;
+        private DevExpress.XtraEditors.SimpleButton btnSave;
     }
 }

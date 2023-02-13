@@ -149,7 +149,10 @@ namespace Forms
 
         private void BtnTableList_Click(object sender, EventArgs e)
         {
-            TableList frm = new TableList();
+            TableList frm = new TableList()
+            {
+                user_id = user_id,
+            };
             frm.MdiParent = ActiveForm;
             this.Close();
             frm.Show();

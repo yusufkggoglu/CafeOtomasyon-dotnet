@@ -101,7 +101,7 @@ namespace Forms
             }
             catch (Exception exception)
             {
-                MessageBox.Show("DataGrid Verileri Aktarılamadı : " + exception.Message);
+                MessageBox.Show("Veriler Aktarılamadı : " + exception.Message);
             }
             return durum;
         }

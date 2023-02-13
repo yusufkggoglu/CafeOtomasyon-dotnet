@@ -38,6 +38,7 @@
             this.flpTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.flpTable.AutoScroll = true;
             this.flpTable.Location = new System.Drawing.Point(10, 91);
             this.flpTable.Name = "flpTable";
             this.flpTable.Size = new System.Drawing.Size(1444, 700);

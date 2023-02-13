@@ -73,7 +73,10 @@ namespace Forms
 
         private void btnYenile_Click(object sender, EventArgs e)
         {
-             TableList frm = new TableList();
+            TableList frm = new TableList()
+            {
+                user_id = user_id,
+             };
              frm.MdiParent = ActiveForm;
              frm.Show();
              this.Close();

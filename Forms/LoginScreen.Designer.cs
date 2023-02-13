@@ -50,8 +50,10 @@
             this.tbxPassword.Location = new System.Drawing.Point(77, 24);
             this.tbxPassword.Multiline = true;
             this.tbxPassword.Name = "tbxPassword";
+            this.tbxPassword.PasswordChar = '*';
             this.tbxPassword.Size = new System.Drawing.Size(223, 48);
             this.tbxPassword.TabIndex = 0;
+            this.tbxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btn1
             // 
@@ -209,7 +211,6 @@
             this.Name = "LoginScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Giriş Ekranı";
-//            this.Load += new System.EventHandler(this.LoginScreen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

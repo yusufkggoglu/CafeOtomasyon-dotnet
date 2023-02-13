@@ -115,6 +115,7 @@
             this.flp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.flp.AutoScroll = true;
             this.flp.Location = new System.Drawing.Point(10, 80);
             this.flp.Name = "flp";
             this.flp.Size = new System.Drawing.Size(825, 699);
@@ -138,6 +139,7 @@
             this.Controls.Add(this.btnYenile);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.flp);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Name = "PaymentScreen";
             this.Text = "Ödeme Ekranı";
             this.Load += new System.EventHandler(this.PaymentScreen_Load);

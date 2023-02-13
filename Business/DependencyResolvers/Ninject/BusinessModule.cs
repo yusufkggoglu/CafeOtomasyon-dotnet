@@ -37,9 +37,6 @@ namespace Business.DependencyResolvers.Ninject
             Bind<ITableService>().To<TableManager>();
             Bind<ITableDal>().To<EfTableDal>();
 
-            Bind<IProductService>().To<ProductManager>();
-            Bind<IProductDal>().To<EfProductDal>();
-
             Bind<IUserService>().To<UserManager>();
             Bind<IUserDal>().To<EfUserDal>();
         }
