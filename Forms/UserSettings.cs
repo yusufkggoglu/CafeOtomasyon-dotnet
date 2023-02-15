@@ -62,23 +62,30 @@ namespace Forms
                 });
                 LoadRoles();
                 LoadComboBoxRoles();
-                MessageBox.Show("Rol Eklendi!");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Rol Eklendi!");
 
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message);
+                DevExpress.XtraEditors.XtraMessageBox.Show(exception.Message);
             }
         }
         private void btnRolSil_Click(object sender, EventArgs e)
         {
-            _roleService.Delete(new Role
+            try
             {
-                RoleID = Convert.ToInt32(dqwRoller.CurrentRow.Cells[0].Value)
-            });
-            LoadRoles();
-            LoadComboBoxRoles();
-            MessageBox.Show("Rol Silindi!");
+                _roleService.Delete(new Role
+                {
+                    RoleID = Convert.ToInt32(dqwRoller.CurrentRow.Cells[0].Value)
+                });
+                LoadRoles();
+                LoadComboBoxRoles();
+                DevExpress.XtraEditors.XtraMessageBox.Show("Rol Silindi!");
+            }
+            catch (Exception)
+            {
+                DevExpress.XtraEditors.XtraMessageBox.Show("Silmek istediğiniz rolün bir kullanıcı içermediğine dikkat edin ve tekrar deneyin.");
+            }
         }
 
         private void dqwRoller_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -105,12 +112,12 @@ namespace Forms
                 });
                 LoadRoles();
                 LoadComboBoxRoles();
-                MessageBox.Show("Rol Güncellendi !");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Rol Güncellendi !");
 
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message);
+                DevExpress.XtraEditors.XtraMessageBox.Show(exception.Message);
             }
         }
 
@@ -126,12 +133,12 @@ namespace Forms
                     RoleID = Convert.ToInt32(cbxRole.SelectedValue),
                 });
                 LoadUsers();
-                MessageBox.Show("Kullanıcı Eklendi !");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Kullanıcı Eklendi !");
 
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message);
+                DevExpress.XtraEditors.XtraMessageBox.Show(exception.Message);
             }
         }
 
@@ -142,7 +149,7 @@ namespace Forms
                 UserID = Convert.ToInt32(dqwKullanicilar.CurrentRow.Cells[0].Value)
             });
             LoadUsers();
-            MessageBox.Show("Kullanıcı Silindi !");
+            DevExpress.XtraEditors.XtraMessageBox.Show("Kullanıcı Silindi !");
         }
 
         private void btnKullaniciGuncelle_Click(object sender, EventArgs e)
@@ -158,11 +165,11 @@ namespace Forms
                     RoleID = Convert.ToInt32(cbxUpdateRole.SelectedValue),
                 });
                 LoadUsers();
-                MessageBox.Show("Kullanıcı Güncellendi !");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Kullanıcı Güncellendi !");
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message);
+                DevExpress.XtraEditors.XtraMessageBox.Show(exception.Message);
             }
         }
     }

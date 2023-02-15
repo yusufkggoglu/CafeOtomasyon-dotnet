@@ -34,11 +34,11 @@ namespace Forms
                     TableName = tbxName.Text,
                 });
                 LoadTables();
-                MessageBox.Show("Masa Eklendi !");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Masa Eklendi !");
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message);
+                DevExpress.XtraEditors.XtraMessageBox.Show(exception.Message);
             }
         }
 
@@ -54,7 +54,7 @@ namespace Forms
                 TableID = Convert.ToInt32(dqwMasalar.CurrentRow.Cells[0].Value)
             });
             LoadTables();
-            MessageBox.Show("Masa Silindi !");
+            DevExpress.XtraEditors.XtraMessageBox.Show("Masa Silindi !");
         }
 
         private void btnGuncelle_Click(object sender, EventArgs e)
@@ -67,12 +67,12 @@ namespace Forms
                     TableName = tbxUpdateName.Text,
                 });
                 LoadTables();
-                MessageBox.Show("Masa Güncellendi !");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Masa Güncellendi !");
 
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message);
+                DevExpress.XtraEditors.XtraMessageBox.Show(exception.Message);
             }
         }
 

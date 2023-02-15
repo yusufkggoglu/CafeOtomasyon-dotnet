@@ -55,11 +55,11 @@ namespace Forms
                 });
                 LoadOutGoings();
                 GetSumOfOutGoings();
-                MessageBox.Show("Gider Eklendi!");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Gider Eklendi!");
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message);
+                DevExpress.XtraEditors.XtraMessageBox.Show(exception.Message);
             }
         }
 
@@ -71,7 +71,7 @@ namespace Forms
             });
             LoadOutGoings();
             GetSumOfOutGoings();
-            MessageBox.Show("Gider Silindi!");
+            DevExpress.XtraEditors.XtraMessageBox.Show("Gider Silindi!");
         }
 
         private void btnGuncelle_Click(object sender, EventArgs e)
@@ -87,11 +87,11 @@ namespace Forms
                 });
                 LoadOutGoings();
                 GetSumOfOutGoings();
-                MessageBox.Show("Gider Güncellendi!");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Gider Güncellendi!");
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message);
+                DevExpress.XtraEditors.XtraMessageBox.Show(exception.Message);
             }
         }
 
@@ -130,7 +130,7 @@ namespace Forms
             }
             catch (Exception exception)
             {
-                MessageBox.Show("Veriler Aktarılamadı : " + exception.Message);
+                DevExpress.XtraEditors.XtraMessageBox.Show("Veriler Aktarılamadı : " + exception.Message);
             }
             return durum;
         }
@@ -142,7 +142,7 @@ namespace Forms
 
         private void btnTemizle_Click(object sender, EventArgs e)
         {
-            DialogResult secenek = MessageBox.Show("Ödeme geçmişi silinecek, Emin misiniz ?", "Dikkat", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            DialogResult secenek = DevExpress.XtraEditors.XtraMessageBox.Show("Ödeme geçmişi silinecek, Emin misiniz ?", "Dikkat", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (secenek == DialogResult.Yes)
             {
                 var list = _outGoingService.GetAll();

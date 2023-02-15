@@ -76,11 +76,11 @@ namespace Forms
                 GetOrderByTableId();
                 ChangeStatus1();
                 GetPrice();
-                MessageBox.Show("Ürün eklendi !");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Ürün eklendi !");
             }
             catch (Exception exception) 
             {
-                MessageBox.Show(exception.Message);
+                DevExpress.XtraEditors.XtraMessageBox.Show(exception.Message);
             }
            
         }
@@ -97,7 +97,7 @@ namespace Forms
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message);
+                DevExpress.XtraEditors.XtraMessageBox.Show(exception.Message);
             }
         }
         public void ChangeStatus0()
@@ -113,7 +113,7 @@ namespace Forms
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message);
+                DevExpress.XtraEditors.XtraMessageBox.Show(exception.Message);
             }
         }
             
@@ -144,7 +144,7 @@ namespace Forms
             });
             GetOrderByTableId();
             GetPrice();
-            MessageBox.Show("Ürün Silindi!");
+            DevExpress.XtraEditors.XtraMessageBox.Show("Ürün Silindi!");
         }
 
         private void BtnTableList_Click(object sender, EventArgs e)
@@ -184,11 +184,11 @@ namespace Forms
                     TableID = id,
                 });
                 GetOrderByTableId();
-                MessageBox.Show("Not Eklendi !");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Not Eklendi !");
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message);
+                DevExpress.XtraEditors.XtraMessageBox.Show(exception.Message);
             }
         }
     }

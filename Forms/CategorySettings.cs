@@ -48,11 +48,11 @@ namespace Forms
 
                 });
                 LoadCategories();
-                MessageBox.Show("Kategori Eklendi!");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Kategori Eklendi!");
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message);
+                DevExpress.XtraEditors.XtraMessageBox.Show(exception.Message);
             }
         }
 
@@ -65,11 +65,11 @@ namespace Forms
                     CategoryID = Convert.ToInt32(dqwKategoriler.CurrentRow.Cells[0].Value)
                 });
                 LoadCategories();
-                MessageBox.Show("Kategori Silindi !");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Kategori Silindi !");
             }
             catch (Exception )
             {
-                MessageBox.Show("Silmek istediğiniz kategorinin bir ürün içermediğine dikkat edin ve tekrar deneyin.");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Silmek istediğiniz kategorinin bir ürün içermediğine dikkat edin ve tekrar deneyin.");
             }
            
         }
@@ -84,11 +84,11 @@ namespace Forms
                     Name = tbxUpdateName.Text,
                 });
                 LoadCategories();
-                MessageBox.Show("Kategori Güncellendi !");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Kategori Güncellendi !");
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message);
+                DevExpress.XtraEditors.XtraMessageBox.Show(exception.Message);
             }
         }
     }

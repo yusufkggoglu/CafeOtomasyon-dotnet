@@ -97,7 +97,7 @@ namespace Forms
             }
             catch
             {
-                MessageBox.Show("Bir sorun oluştu , Tekrar deneyiniz !");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Bir sorun oluştu , Tekrar deneyiniz !");
             }
         }
     }

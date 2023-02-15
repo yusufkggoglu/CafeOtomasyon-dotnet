@@ -104,7 +104,7 @@ namespace Forms
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message);
+                DevExpress.XtraEditors.XtraMessageBox.Show(exception.Message);
             }
         }
         public void ChangeStatus0(Table table)
@@ -120,7 +120,7 @@ namespace Forms
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message);
+                DevExpress.XtraEditors.XtraMessageBox.Show(exception.Message);
             }
         }
 
@@ -133,12 +133,12 @@ namespace Forms
                 {
                     _orderService.Delete(temp);
                 }
-                MessageBox.Show("Hesap Ödendi!");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Hesap Ödendi!");
                 GetTables();
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message);
+                DevExpress.XtraEditors.XtraMessageBox.Show(exception.Message);
             }
         }
         
@@ -160,7 +160,7 @@ namespace Forms
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message);
+                DevExpress.XtraEditors.XtraMessageBox.Show(exception.Message);
             }
         }
 
@@ -181,7 +181,7 @@ namespace Forms
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message);
+                DevExpress.XtraEditors.XtraMessageBox.Show(exception.Message);
             }
         }
 

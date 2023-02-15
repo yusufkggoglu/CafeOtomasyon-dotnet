@@ -101,14 +101,14 @@ namespace Forms
             }
             catch (Exception exception)
             {
-                MessageBox.Show("Veriler Aktarılamadı : " + exception.Message);
+                DevExpress.XtraEditors.XtraMessageBox.Show("Veriler Aktarılamadı : " + exception.Message);
             }
             return durum;
         }
 
         private void btnTemizle_Click(object sender, EventArgs e)
         {
-            DialogResult secenek = MessageBox.Show("Ödeme geçmişi silinecek, Emin misiniz ?", "Dikkat", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            DialogResult secenek = DevExpress.XtraEditors.XtraMessageBox.Show("Ödeme geçmişi silinecek, Emin misiniz ?", "Dikkat", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (secenek == DialogResult.Yes)
             {
                 var list = _paymentService.GetAll();
@@ -120,6 +120,7 @@ namespace Forms
                 tbxToplam.Text = GetSumPrice();
                 tbxKart.Text = GetByPaymentMethod("Kredi Kartı");
                 tbxNakit.Text = GetByPaymentMethod("Nakit");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Ödeme geçmişi temizlendi !");
             }
         }
     }

@@ -60,11 +60,11 @@ namespace Forms
                     Price = Convert.ToDecimal(tbxPrice.Text)
                 });
                 LoadProducts();
-                MessageBox.Show("Ürün Eklendi!");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Ürün Eklendi!");
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message);
+                DevExpress.XtraEditors.XtraMessageBox.Show(exception.Message);
             }
         }
 
@@ -80,11 +80,11 @@ namespace Forms
                     Price = Convert.ToDecimal(tbxUpdatePrice.Text)
                 });
                 LoadProducts();
-                MessageBox.Show("Ürün Güncellendi!");
+                DevExpress.XtraEditors.XtraMessageBox.Show("Ürün Güncellendi!");
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message);
+                DevExpress.XtraEditors.XtraMessageBox.Show(exception.Message);
             }
         }
 
@@ -102,7 +102,7 @@ namespace Forms
                 ProductID = Convert.ToInt32(dqwUrunler.CurrentRow.Cells[0].Value)
             });
             LoadProducts();
-            MessageBox.Show("Ürün Silindi!");
+            DevExpress.XtraEditors.XtraMessageBox.Show("Ürün Silindi!");
         }
     }
 }
