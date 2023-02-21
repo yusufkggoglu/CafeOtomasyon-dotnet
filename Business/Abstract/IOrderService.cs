@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataAccess.ComplexTypes;
 using Entities.Concrete;
 
 namespace Business.Abstract
@@ -15,5 +16,6 @@ namespace Business.Abstract
         void Update(Order order);
         void Delete(Order order);
         Order Get(int id);
+        List<OrderDetail> OrderDetails(int id);
     }
 }

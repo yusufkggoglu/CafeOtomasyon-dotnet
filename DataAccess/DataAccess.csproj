@@ -60,6 +60,7 @@
     <Compile Include="Abstract\IRoleDal.cs" />
     <Compile Include="Abstract\ITableDal.cs" />
     <Compile Include="Abstract\IUserDal.cs" />
+    <Compile Include="ComplexTypes\OrderDetail.cs" />
     <Compile Include="Concrete\EntityFramework\CafeContext.cs" />
     <Compile Include="Concrete\EntityFramework\EfCategoryDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfEntityRepositoryBase.cs" />
