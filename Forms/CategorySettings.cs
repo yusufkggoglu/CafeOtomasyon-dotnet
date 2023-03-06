@@ -23,7 +23,7 @@ namespace Forms
             _categoryService = InstanceFactory.GetInstance<ICategoryService>();
         }
         ICategoryService _categoryService;
-        public int user_id;
+        public User user;
         private void CategorySettings_Load(object sender, EventArgs e)
         {
             LoadCategories();

@@ -27,7 +27,7 @@ namespace Forms
 
         public int id;
         public string masa_Ad;
-        public int user_id;
+        public User user;
 
         IProductService _productService;
         IOrderService _orderService;
@@ -69,7 +69,7 @@ namespace Forms
                     Price = Convert.ToDecimal(btn.AccessibleDescription),
                     TableID = id,
                     Amount = 1,
-                    UserID = user_id,
+                    UserID = user.UserID,
                     OrderTime = DateTime.Now,
                     Note = "",
                 });
@@ -151,7 +151,7 @@ namespace Forms
         {
             TableList frm = new TableList()
             {
-                user_id = user_id,
+                user = user
             };
             frm.MdiParent = ActiveForm;
             this.Close();
@@ -180,7 +180,7 @@ namespace Forms
                     OrderTime = Convert.ToDateTime(dqwOrders.CurrentRow.Cells[5].Value),
                     Price = Convert.ToDecimal(dqwOrders.CurrentRow.Cells[3].Value),
                     ProductName = dqwOrders.CurrentRow.Cells[2].Value.ToString(),
-                    UserID = user_id,
+                    UserID = user.UserID,
                     TableID = id,
                 });
                 GetOrderByTableId();

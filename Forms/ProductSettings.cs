@@ -25,7 +25,7 @@ namespace Forms
         }
         IProductService _productService;
         ICategoryService _categoryService;
-        public int user_id;
+        public User user;
 
         private void ProductSettings_Load(object sender, EventArgs e)
         {

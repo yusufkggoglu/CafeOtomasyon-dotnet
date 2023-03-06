@@ -26,7 +26,7 @@ namespace Forms
             _tableService = InstanceFactory.GetInstance<ITableService>();
         }
         ITableService _tableService;
-        public int user_id;
+        public User user;
         private void GetTables()
         {
             var model = _tableService.GetAll();
@@ -59,7 +59,7 @@ namespace Forms
             {
                 masa_Ad = btn.Name.ToString(),
                 id = Convert.ToInt32(btn.AccessibleDescription),
-                user_id=user_id,
+                user = user
             };
             frm.MdiParent = ActiveForm;
             this.Close();
@@ -75,8 +75,8 @@ namespace Forms
         {
             TableList frm = new TableList()
             {
-                user_id = user_id,
-             };
+                user = user
+            };
              frm.MdiParent = ActiveForm;
              frm.Show();
              this.Close();

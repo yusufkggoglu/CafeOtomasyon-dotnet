@@ -88,7 +88,7 @@ namespace Forms
                     {
                         MainLayout frm1 = new MainLayout()
                         {
-                            user_id = temp.UserID,
+                            user = temp,
                         };
                         frm1.Show();
                         this.Hide();
@@ -99,6 +99,11 @@ namespace Forms
             {
                 DevExpress.XtraEditors.XtraMessageBox.Show("Bir sorun oluştu , Tekrar deneyiniz !");
             }
+        }
+
+        private void LoginScreen_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

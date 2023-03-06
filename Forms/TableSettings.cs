@@ -23,7 +23,7 @@ namespace Forms
             _tableService = InstanceFactory.GetInstance<ITableService>();
         }
         ITableService _tableService;
-        public int user_id;
+        public User user;
 
         private void btnEkle_Click(object sender, EventArgs e)
         {

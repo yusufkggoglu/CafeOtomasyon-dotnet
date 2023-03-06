@@ -12,6 +12,7 @@ using Business.Concrete;
 using DataAccess.Concrete.EntityFramework;
 using Excel = Microsoft.Office.Interop.Excel;
 using Business.DependencyResolvers.Ninject;
+using Entities.Concrete;
 
 namespace Forms
 {
@@ -23,7 +24,7 @@ namespace Forms
             _paymentService = InstanceFactory.GetInstance<IPaymentService>();
         }
         IPaymentService _paymentService;
-        public int user_id;
+        public User user;
 
         private void LoadPayments()
         {

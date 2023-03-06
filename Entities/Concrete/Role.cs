@@ -11,5 +11,6 @@ namespace Entities.Concrete
     {
         public int RoleID { get; set; }
         public string RoleName { get; set; }
+        public string AdminStatus { get; set; }
     }
 }

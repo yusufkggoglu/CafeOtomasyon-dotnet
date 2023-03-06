@@ -27,7 +27,7 @@ namespace Forms
         ITableService _tableService;
         IOrderService _orderService;
         IPaymentService _paymentService;
-        public int user_id;
+        public User user;
         private int masa_id;
         
         private void PaymentScreen_Load(object sender, EventArgs e)

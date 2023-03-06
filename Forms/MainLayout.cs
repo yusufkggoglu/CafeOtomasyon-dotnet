@@ -21,9 +21,11 @@ namespace Forms
         {
             InitializeComponent();
             _userService = InstanceFactory.GetInstance<IUserService>();
+            _roleService = InstanceFactory.GetInstance<IRoleService>();
         }
         IUserService _userService;
-        public int user_id;
+        IRoleService _roleService;
+        public User user;
         ProductSettings frm1;
         CategorySettings frm2;
         UserSettings frm3;
@@ -39,7 +41,7 @@ namespace Forms
             if(frm1==null || frm1.IsDisposed)
             frm1 = new ProductSettings()
             {
-                user_id=user_id,
+                user = user
             };
             frm1.MdiParent = this;
             frm1.Show();
@@ -50,7 +52,7 @@ namespace Forms
             if (frm2 == null || frm2.IsDisposed)
             frm2 = new CategorySettings()
             {
-                user_id=user_id,
+                user = user
             };
             frm2.MdiParent = this;
             frm2.Show();
@@ -61,7 +63,7 @@ namespace Forms
             if (frm3 == null || frm3.IsDisposed)
                 frm3 = new UserSettings()
                 {
-                    user_id=user_id,
+                    user = user
                 };
             frm3.MdiParent = this;
             frm3.Show();
@@ -72,7 +74,7 @@ namespace Forms
             if (frm4 == null || frm4.IsDisposed)
                 frm4 = new TableSettings()
                 {
-                    user_id=user_id,
+                    user = user
                 };
             frm4.MdiParent = this;
             frm4.Show();
@@ -83,7 +85,7 @@ namespace Forms
             if (frm5 == null || frm5.IsDisposed)
                 frm5 = new TableList()
                 {
-                    user_id=user_id,
+                    user = user
                 };
             frm5.MdiParent = this;
             frm5.Show();
@@ -94,7 +96,7 @@ namespace Forms
             if (frm6 == null || frm6.IsDisposed)
                 frm6 = new PaymentScreen()
                 {
-                    user_id = user_id,
+                    user = user
                 };
             frm6.MdiParent = this;
             frm6.Show();
@@ -102,8 +104,8 @@ namespace Forms
 
         private void MainLayout_Load(object sender, EventArgs e)
         {
-            User user = _userService.Get(user_id);
-            if (user.RoleID == 2 || user.RoleID == 3)
+            Role r = _roleService.Get(Convert.ToInt32(user.RoleID));
+            if (Convert.ToInt32(r.AdminStatus) == 0)
             {
                 barBtnKasa.Enabled = true;
                 barBtnGider.Enabled = true;
@@ -127,7 +129,7 @@ namespace Forms
             if (frm7 == null || frm7.IsDisposed)
                 frm7 = new PaymentHistoryScreen()
                 {
-                    user_id = user_id,
+                    user = user
                 };
             frm7.MdiParent = this;
             frm7.Show();

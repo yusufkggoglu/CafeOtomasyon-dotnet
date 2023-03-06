@@ -25,7 +25,7 @@ namespace Forms
         }
         IUserService _userService;
         IRoleService _roleService;
-        public int user_id;
+        public User user;
 
         private void LoadRoles()
         {
@@ -59,6 +59,7 @@ namespace Forms
                 _roleService.Add(new Role
                 {
                     RoleName = tbxRoleName.Text,
+                    AdminStatus = cmbAdminStatus.SelectedIndex.ToString(),
                 });
                 LoadRoles();
                 LoadComboBoxRoles();
@@ -91,6 +92,7 @@ namespace Forms
         private void dqwRoller_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             tbxUpdateRoleName.Text = dqwRoller.CurrentRow.Cells[1].Value.ToString();
+            cmbUpdateAdminStatus.SelectedIndex = Convert.ToInt32(dqwRoller.CurrentRow.Cells[2].Value);
         }
 
         private void dqwKullanicilar_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -108,7 +110,8 @@ namespace Forms
                 _roleService.Update(new Role
                 {
                     RoleID = Convert.ToInt32(dqwRoller.CurrentRow.Cells[0].Value),
-                    RoleName = tbxUpdateRoleName.Text
+                    RoleName = tbxUpdateRoleName.Text,
+                    AdminStatus = cmbUpdateAdminStatus.SelectedIndex.ToString(),
                 });
                 LoadRoles();
                 LoadComboBoxRoles();
@@ -134,7 +137,6 @@ namespace Forms
                 });
                 LoadUsers();
                 DevExpress.XtraEditors.XtraMessageBox.Show("Kullanıcı Eklendi !");
-
             }
             catch (Exception exception)
             {

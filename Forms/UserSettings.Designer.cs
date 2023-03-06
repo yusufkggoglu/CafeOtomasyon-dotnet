@@ -62,6 +62,8 @@
             this.TabGuncelle = new DevExpress.XtraTab.XtraTabPage();
             this.TabEkle = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTab = new DevExpress.XtraTab.XtraTabControl();
+            this.cmbAdminStatus = new System.Windows.Forms.ComboBox();
+            this.cmbUpdateAdminStatus = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dqwRoller)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -89,6 +91,7 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.cmbAdminStatus);
             this.groupControl1.Controls.Add(this.btnKullaniciSil);
             this.groupControl1.Controls.Add(this.btnKullaniciEkle);
             this.groupControl1.Controls.Add(this.cbxRole);
@@ -115,7 +118,7 @@
             this.btnKullaniciSil.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.btnKullaniciSil.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnKullaniciSil.ImageOptions.Image")));
-            this.btnKullaniciSil.Location = new System.Drawing.Point(113, 452);
+            this.btnKullaniciSil.Location = new System.Drawing.Point(113, 495);
             this.btnKullaniciSil.Name = "btnKullaniciSil";
             this.btnKullaniciSil.Size = new System.Drawing.Size(143, 44);
             this.btnKullaniciSil.TabIndex = 26;
@@ -127,7 +130,7 @@
             this.btnKullaniciEkle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.btnKullaniciEkle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnKullaniciEkle.ImageOptions.Image")));
-            this.btnKullaniciEkle.Location = new System.Drawing.Point(113, 378);
+            this.btnKullaniciEkle.Location = new System.Drawing.Point(113, 421);
             this.btnKullaniciEkle.Name = "btnKullaniciEkle";
             this.btnKullaniciEkle.Size = new System.Drawing.Size(143, 48);
             this.btnKullaniciEkle.TabIndex = 25;
@@ -139,7 +142,7 @@
             this.cbxRole.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.cbxRole.FormattingEnabled = true;
-            this.cbxRole.Location = new System.Drawing.Point(113, 293);
+            this.cbxRole.Location = new System.Drawing.Point(113, 336);
             this.cbxRole.Name = "cbxRole";
             this.cbxRole.Size = new System.Drawing.Size(143, 24);
             this.cbxRole.TabIndex = 24;
@@ -148,7 +151,7 @@
             // 
             this.tbxSifre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.tbxSifre.Location = new System.Drawing.Point(113, 338);
+            this.tbxSifre.Location = new System.Drawing.Point(113, 381);
             this.tbxSifre.Name = "tbxSifre";
             this.tbxSifre.Size = new System.Drawing.Size(143, 23);
             this.tbxSifre.TabIndex = 23;
@@ -159,7 +162,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lblSifre.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblSifre.Appearance.Options.UseFont = true;
-            this.lblSifre.Location = new System.Drawing.Point(16, 336);
+            this.lblSifre.Location = new System.Drawing.Point(16, 379);
             this.lblSifre.Name = "lblSifre";
             this.lblSifre.Size = new System.Drawing.Size(35, 22);
             this.lblSifre.TabIndex = 22;
@@ -171,7 +174,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lblRol.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblRol.Appearance.Options.UseFont = true;
-            this.lblRol.Location = new System.Drawing.Point(16, 291);
+            this.lblRol.Location = new System.Drawing.Point(16, 334);
             this.lblRol.Name = "lblRol";
             this.lblRol.Size = new System.Drawing.Size(25, 22);
             this.lblRol.TabIndex = 20;
@@ -181,7 +184,7 @@
             // 
             this.tbxSoyad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.tbxSoyad.Location = new System.Drawing.Point(113, 246);
+            this.tbxSoyad.Location = new System.Drawing.Point(113, 289);
             this.tbxSoyad.Name = "tbxSoyad";
             this.tbxSoyad.Size = new System.Drawing.Size(143, 23);
             this.tbxSoyad.TabIndex = 19;
@@ -192,7 +195,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lblSoyad.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblSoyad.Appearance.Options.UseFont = true;
-            this.lblSoyad.Location = new System.Drawing.Point(16, 247);
+            this.lblSoyad.Location = new System.Drawing.Point(16, 290);
             this.lblSoyad.Name = "lblSoyad";
             this.lblSoyad.Size = new System.Drawing.Size(48, 22);
             this.lblSoyad.TabIndex = 18;
@@ -202,7 +205,7 @@
             // 
             this.tbxAd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.tbxAd.Location = new System.Drawing.Point(113, 195);
+            this.tbxAd.Location = new System.Drawing.Point(113, 238);
             this.tbxAd.Name = "tbxAd";
             this.tbxAd.Size = new System.Drawing.Size(143, 23);
             this.tbxAd.TabIndex = 17;
@@ -213,7 +216,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lblAd.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblAd.Appearance.Options.UseFont = true;
-            this.lblAd.Location = new System.Drawing.Point(16, 196);
+            this.lblAd.Location = new System.Drawing.Point(16, 239);
             this.lblAd.Name = "lblAd";
             this.lblAd.Size = new System.Drawing.Size(21, 22);
             this.lblAd.TabIndex = 16;
@@ -222,7 +225,7 @@
             // btnRolSil
             // 
             this.btnRolSil.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRolSil.ImageOptions.Image")));
-            this.btnRolSil.Location = new System.Drawing.Point(113, 128);
+            this.btnRolSil.Location = new System.Drawing.Point(113, 168);
             this.btnRolSil.Name = "btnRolSil";
             this.btnRolSil.Size = new System.Drawing.Size(143, 44);
             this.btnRolSil.TabIndex = 15;
@@ -232,7 +235,7 @@
             // btnRolEkle
             // 
             this.btnRolEkle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRolEkle.ImageOptions.Image")));
-            this.btnRolEkle.Location = new System.Drawing.Point(113, 59);
+            this.btnRolEkle.Location = new System.Drawing.Point(113, 99);
             this.btnRolEkle.Name = "btnRolEkle";
             this.btnRolEkle.Size = new System.Drawing.Size(143, 48);
             this.btnRolEkle.TabIndex = 14;
@@ -258,6 +261,7 @@
             // 
             // groupControl2
             // 
+            this.groupControl2.Controls.Add(this.cmbUpdateAdminStatus);
             this.groupControl2.Controls.Add(this.btnKullaniciGuncelle);
             this.groupControl2.Controls.Add(this.cbxUpdateRole);
             this.groupControl2.Controls.Add(this.tbxUpdateSifre);
@@ -376,7 +380,7 @@
             // btnRolGuncelle
             // 
             this.btnRolGuncelle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRolGuncelle.ImageOptions.Image")));
-            this.btnRolGuncelle.Location = new System.Drawing.Point(114, 106);
+            this.btnRolGuncelle.Location = new System.Drawing.Point(115, 127);
             this.btnRolGuncelle.Name = "btnRolGuncelle";
             this.btnRolGuncelle.Size = new System.Drawing.Size(143, 48);
             this.btnRolGuncelle.TabIndex = 13;
@@ -402,7 +406,7 @@
             this.TabGuncelle.Controls.Add(this.groupControl2);
             this.TabGuncelle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TabGuncelle.ImageOptions.Image")));
             this.TabGuncelle.Name = "TabGuncelle";
-            this.TabGuncelle.Size = new System.Drawing.Size(320, 732);
+            this.TabGuncelle.Size = new System.Drawing.Size(318, 734);
             this.TabGuncelle.Text = "Güncelle";
             // 
             // TabEkle
@@ -410,7 +414,7 @@
             this.TabEkle.Controls.Add(this.groupControl1);
             this.TabEkle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("TabEkle.ImageOptions.Image")));
             this.TabEkle.Name = "TabEkle";
-            this.TabEkle.Size = new System.Drawing.Size(320, 732);
+            this.TabEkle.Size = new System.Drawing.Size(318, 734);
             this.TabEkle.Text = "Ekle";
             // 
             // xtraTab
@@ -425,6 +429,32 @@
             this.xtraTab.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.TabEkle,
             this.TabGuncelle});
+            // 
+            // cmbAdminStatus
+            // 
+            this.cmbAdminStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.cmbAdminStatus.FormattingEnabled = true;
+            this.cmbAdminStatus.Items.AddRange(new object[] {
+            "Evet",
+            "Hayır"});
+            this.cmbAdminStatus.Location = new System.Drawing.Point(113, 54);
+            this.cmbAdminStatus.Name = "cmbAdminStatus";
+            this.cmbAdminStatus.Size = new System.Drawing.Size(143, 24);
+            this.cmbAdminStatus.TabIndex = 27;
+            // 
+            // cmbUpdateAdminStatus
+            // 
+            this.cmbUpdateAdminStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.cmbUpdateAdminStatus.FormattingEnabled = true;
+            this.cmbUpdateAdminStatus.Items.AddRange(new object[] {
+            "Evet",
+            "Hayır"});
+            this.cmbUpdateAdminStatus.Location = new System.Drawing.Point(115, 97);
+            this.cmbUpdateAdminStatus.Name = "cmbUpdateAdminStatus";
+            this.cmbUpdateAdminStatus.Size = new System.Drawing.Size(143, 24);
+            this.cmbUpdateAdminStatus.TabIndex = 36;
             // 
             // UserSettings
             // 
@@ -488,5 +518,7 @@
         private DevExpress.XtraTab.XtraTabPage TabGuncelle;
         private DevExpress.XtraTab.XtraTabPage TabEkle;
         private DevExpress.XtraTab.XtraTabControl xtraTab;
+        private System.Windows.Forms.ComboBox cmbAdminStatus;
+        private System.Windows.Forms.ComboBox cmbUpdateAdminStatus;
     }
 }
